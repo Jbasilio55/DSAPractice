@@ -42,5 +42,21 @@ public class Main {
         //
         //  int[]  needALongerName  ---> occurs during compilation
         //  new int[3]              ---> occurs during runtime - (Dynamic memory allocation)
+
+        // in java
+        // ( 1 ) array objects are in the heap
+        // ( 2 ) heap objects are not continuous like C (it all depends on the JVM)
+        // ( 3 ) DMA - Dynamic memory Allocation (Array obj in java may not be continuous as per Java Docs)
+        // in many languages arrays are continuous
+
+        // arrays have indexes  starting from 0 1 2 ... n
+        // each index will have an element (data - all from same data type)
+
+        System.out.println(names[0]);
+        // names[0] ---> will return the first element
+        // you can change an element in an array by assigning a new value to that index.
+
+        names[0] = "Kyle";
+        System.out.println(names[0]);
     }
 }
