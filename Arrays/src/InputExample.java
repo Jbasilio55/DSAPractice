@@ -14,6 +14,7 @@ public class InputExample {
 
         System.out.println(Arrays.toString(arr));
 
+        int[] newNum = {3, 4, 5, 6, 7}; // another method better than the top
 
         //input using for loops
         for(int i = 0; i < arr.length; i++){
