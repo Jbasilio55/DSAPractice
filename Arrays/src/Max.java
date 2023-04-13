@@ -6,6 +6,10 @@ public class Max {
     }
 
     private static int max(int[] arr) {
+        if(arr.length == 0){
+            return -1;
+        }
+
         int max = arr[0];
 
         for(int i = 1; i < arr.length; i++){
