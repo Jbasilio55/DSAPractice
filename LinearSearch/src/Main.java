@@ -10,6 +10,7 @@ public class Main {
 
     //loops through array and return the index if found
     private static int linearSearchIndex(int[] arr, int target) {
+        //edge case
         if(arr.length == 0){
             return -1;
         }
@@ -25,6 +26,7 @@ public class Main {
     //search in the array: return the index if item found
     //otherwise if the item is not found return -1.
     public static boolean linearSearch(int[] arr, int target){
+        //edge case
         if(arr.length == 0){
             return false;
         }
@@ -44,7 +46,9 @@ public class Main {
     public static int linearSearchTP(int[] arr, int target){
         int length = arr.length;
 
+        //edge case
         if(length == 0) return -1;
+
         // loop through half of the array length
         for(int i = 0; i < length / 2; i++){
             // search in both directions from start and end towards the middle
