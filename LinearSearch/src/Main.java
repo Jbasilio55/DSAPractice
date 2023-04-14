@@ -3,13 +3,15 @@ public class Main {
         int[] nums = {22, 45, 67, 82, 75, 33, 11, 9, 56, 100};
         System.out.println(linearSearch(nums, 67));
         System.out.println(linearSearchIndex(nums, 9));
+        System.out.println(linearSearchTP(nums, 9));
     }
 
+    //loops through array and return the index if found
     private static int linearSearchIndex(int[] arr, int target) {
         if(arr.length == 0){
             return -1;
         }
-
+        //for loop to check if target matches an element in the array
         for(int i = 0; i < arr.length; i++){
             if(arr[i] == target){
                 return i;
@@ -33,5 +35,25 @@ public class Main {
             }
         }
         return false;
+    }
+
+    //optimized linear search to only take half the time O(N/2)
+    //Using 2 pointer method (p1 - start) --->  index  <------(p2 - end)
+    public static int linearSearchTP(int[] arr, int target){
+        int length = arr.length;
+
+        if(length == 0) return -1;
+        // loop through half of the array length
+        for(int i = 0; i < length / 2; i++){
+            // search in both directions from start and end towards the middle
+            if(arr[i] == target){
+                return i;
+            }
+
+            if(arr[length - i - 1] == target){
+                return length - i - 1;
+            }
+        }
+        return -1;
     }
 }
