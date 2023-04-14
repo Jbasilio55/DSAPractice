@@ -2,7 +2,7 @@ public class SearchInRange {
     public static void main(String[] args) {
         int[] nums = {22, 45, 67, 82, 75, 33, 11, 9, 56, 100};
         System.out.println(linearSearch(nums, 75, 2, 6));
-        System.out.println(linearSearchTP(nums, 75, 2, 6));
+        System.out.println(linearSearchTP(nums, 100, 2, 6));
     }
     //search in the array: return the index if item found
     //otherwise if the item is not found return -1.
