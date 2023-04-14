@@ -4,6 +4,8 @@ public class Main {
         System.out.println(linearSearch(nums, 67));
         System.out.println(linearSearchIndex(nums, 9));
         System.out.println(linearSearchTP(nums, 9));
+        System.out.println(LinearSearchFE(nums, 75));
+        System.out.println(LinearSearchFE(nums, 101));
     }
 
     //loops through array and return the index if found
@@ -54,6 +56,22 @@ public class Main {
                 return length - i - 1;
             }
         }
+        return -1;
+    }
+
+    public static int LinearSearchFE(int[] arr, int target){
+        //edge case if array is empty
+        if(arr.length == 0){
+            return -1;
+        }
+
+        //for each loop(if found return the element)
+        for(int element : arr){
+            if(element == target){
+                return element;
+            }
+        }
+        //if the above code is not executed return -1. stating that the target is not in the array
         return -1;
     }
 }
