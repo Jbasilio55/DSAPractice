@@ -11,6 +11,7 @@ public class SearchIn2DArray {
         System.out.println(Arrays.toString(search(arr, 55)));
         System.out.println(search2(arr, 34));
         System.out.println(search2(arr, 0));
+        System.out.println(max(arr));
     }
 
     public static int[] search(int[][] arr, int target){
@@ -43,5 +44,22 @@ public class SearchIn2DArray {
         }
         //return false / not found
         return false;
+    }
+
+    public static int max(int[][] arr){
+        //set min to lowest val possible
+        int max = Integer.MIN_VALUE;
+
+        //Double for loop
+        for(int row = 0; row < arr.length; row++){
+            for(int col = 0; col < arr[row].length; col++){
+                //if current element is greater than max. assign current element to max val.
+                if(arr[row][col] > max){
+                    max = arr[row][col];
+                }
+            }
+        }
+        //return max value
+        return max;
     }
 }
