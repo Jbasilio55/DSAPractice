@@ -91,13 +91,18 @@ public class EvenDigits {
     }
 
     private static int findNumbers4(int[] nums){
+        //count total even
         int total = 0;
 
+        //loop through array
         for(int i = 0; i < nums.length; i++){
+            //Use log10 to get last 3 digits and then add 1 to fix digit count
             if((int)(Math.log10(nums[i])+1) % 2 == 0){
+                //increment total
                 total++;
             }
         }
+        //return total
         return total;
     }
 }
