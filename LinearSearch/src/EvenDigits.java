@@ -8,6 +8,7 @@ public class EvenDigits {
         System.out.println(findNumbers(nums)); // count the even elements
         System.out.println(findNumbers2(nums)); // count the elements with even amount of digits
         System.out.println(findNumbers3(nums)); // count the total even # of digits of all elements in an array
+        System.out.println(findNumbers4(nums)); // optimized method #2 using log10
     }
 
     //Time Complexity = O(N)
@@ -84,9 +85,19 @@ public class EvenDigits {
                 //divide element by 10 to get the next right most digit
                 currentElm /= 10;
             }
-
         }
         //return counter
         return counter;
+    }
+
+    private static int findNumbers4(int[] nums){
+        int total = 0;
+
+        for(int i = 0; i < nums.length; i++){
+            if((int)(Math.log10(nums[i])+1) % 2 == 0){
+                total++;
+            }
+        }
+        return total;
     }
 }
