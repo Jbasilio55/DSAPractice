@@ -1,7 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        int[] numbs = {-3, -1, 1, 2, 3, 5, 6, 23, 45, 66};
+        int[] numbs = {-100, -3, 1, 2, 3, 5, 6, 23, 45, 66, 79, 1098};
+
         System.out.println(search(numbs, 3));
+        System.out.println(search(numbs, 0));
+        System.out.println(search(numbs, 45));
+        System.out.println(search(numbs, 5));
     }
     //return the index
     // return -1 if target does not exist in array
@@ -29,7 +33,6 @@ public class Main {
 
             //if the target is less than element at the middle. reassign end to be middle - 1
             if(target < numbs[middle]) end = middle - 1;
-
         }
         //return -1 if not found
         return -1;
