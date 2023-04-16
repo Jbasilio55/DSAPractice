@@ -22,13 +22,13 @@ public class RichestCustomerWealth {
         //create a variable for sum
         int sum;
 
-        //loop through 2D array
-        for(int row = 0; row <accounts.length; row++){
-            //set sum to 0 after col + 1 (change in account)
+        //loop through 2D array ([person][account])
+        for(int person = 0; person <accounts.length; person++){
+            //set sum to 0 after looping through each person
             sum = 0;
-            for(int col = 0; col < accounts[row].length; col++){
+            for(int account = 0; account < accounts[person].length; account++){
                 //add all element to sum
-                sum += accounts[row][col];
+                sum += accounts[person][account];
             }
             //If sum is greater than Maximum
             if(sum > maxSum){
