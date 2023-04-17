@@ -16,6 +16,11 @@ public class CeilingOfANumber {
         int end = arr.length - 1;
         int middle;
 
+        //edge case. if target is greater than the greatest element
+        if(target > arr[end]){
+            return -1;
+        }
+
         //Run while loop BS
         while(start <= end){
             //Find middle element

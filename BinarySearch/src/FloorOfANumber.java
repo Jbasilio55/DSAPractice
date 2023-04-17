@@ -16,6 +16,11 @@ public class FloorOfANumber {
         int end = arr.length - 1;
         int middle;
 
+        //edge case. if target is less than the smallest element
+        if(target < arr[end]){
+            return -1;
+        }
+
         //Run while loop BS
         while(start <= end){
             //Find middle element
