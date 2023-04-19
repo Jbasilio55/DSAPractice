@@ -48,6 +48,6 @@ public class FindSmallestLetter {
             }
         }
         //if element is not found return -1
-        return letters[start  % letters.length];
+        return letters[start % letters.length];
     }
 }
