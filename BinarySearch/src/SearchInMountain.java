@@ -29,20 +29,32 @@ public class SearchInMountain {
         //Input: array = [0,1,2,4,2,1], target = 3
         //Output: -1
         //Explanation: 3 does not exist in the array, so we return -1.
+
+        int[] array = {1,2,3,4,5,3,1};
+        int[] array2 = {0,1,2,4,2,1};
+
+        System.out.println(search(array, 3)); //passed
+        System.out.println(search(array2, 3)); //passed
     }
 
-    public static int search(){
-
+    public static int search(int[] arr, int target){
+        int peak = findPeak(arr);
+        int firstCheck = agnosticBS(arr, target, 0, peak);
+        if(firstCheck != -1){
+            return firstCheck;
+        }
+        //Check second half of the array
+        return agnosticBS(arr, target,peak + 1, arr.length - 1);
     }
 
-    public int findInMountainArray(int[] arr, int target, int start, int end){
+    public static int findPeak(int[] arr){
         int start = 0;
         int end = arr.length - 1;
         int mid;
 
         while(start < end){
             //find mid of an array
-            mid = start + (end + start) / 2;
+            mid = start + (end - start) / 2;
             //if mid is greater than the next (+ 1) element set end equal to mid
             if(arr[mid] > arr[mid + 1]){
                 end = mid;
@@ -57,5 +69,45 @@ public class SearchInMountain {
         // more elaboration: at every point of time for start and end, they have the best possible answer till that time
         // and if we are saying that only one item is remaining, hence cuz of above line that is the best possible ans
         return start; // return start or mid because they are both equal
+    }
+
+    public static int agnosticBS(int[] numbs, int target, int start, int end){
+        //initialize middle
+        int middle;
+
+        //check if the array is ASC or DES
+        boolean isAsc = numbs[start] < numbs[end];
+
+        while(start <= end){
+            //Find the middle element
+            // middle = (start + end) / 2; this code may cause an error if (start + end) exceeds the range of java
+            // better way to write to prevent this is the code below
+            middle = start + (end - start) / 2;
+
+            //If element at the middle equals the target return the index at middle
+            if(numbs[middle] == target){
+                return middle;
+            }
+
+            if(isAsc){
+                //If target is greater than element at the middle. assign a new start to be middle + 1
+                if(target > numbs[middle]){
+                    start = middle + 1;
+                }else{
+                    //if the target is less than element at the middle. reassign end to be middle - 1
+                    end = middle - 1;
+                }
+            }else{
+                //If target is greater than element at the middle. assign a new start to be middle + 1
+                if(target < numbs[middle]){
+                    start = middle + 1;
+                }else{
+                    //If target is greater than element at the middle. assign a new start to be middle + 1
+                    end = middle - 1;
+                }
+            }
+        }
+        //return -1 if not found
+        return -1;
     }
 }
