@@ -40,7 +40,9 @@ public class BubbleSort {
         //run the loop n-1 times
         for(int i = 0; i < arr.length; i++){
             for(int j = 1; j < arr.length - i; j++){
+                //swap if the current element is smaller than the previous element
                 if(arr[j] < arr[j - 1]){
+                    //swap
                     temp = arr[j];
                     arr[j] = arr[j - 1];
                     arr[j -1] = temp;
