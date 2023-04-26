@@ -22,6 +22,34 @@ public class Search2DMatrix {
     }
 
     public static boolean searchMatrix(int[][] matrix, int target){
+        // If the size of matrix is 0. Always return false
+        if (matrix.length == 0) {
+            return false;
+        }
 
+        int col = matrix[0].length - 1;
+        int row = 0;
+
+        // Loop through elements of Matrix
+        // Until the target is found
+
+        while (col >= 0 && row <= matrix.length - 1) {
+      /*
+        Cases:
+          target == item : We found the item. Return true.
+          target < item : Target must be to our left...go down in value
+          target > item : Target must be to our below...go up in value
+      */
+            if (target == matrix[row][col]) {
+                return true;
+            } else if (target < matrix[row][col]) {
+                col--;
+            } else if (target > matrix[row][col]) {
+                row++;
+            }
+        }
+
+        // Target is not available in the matrix
+        return false;
     }
 }
