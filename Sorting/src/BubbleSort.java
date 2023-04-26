@@ -32,15 +32,18 @@ public class BubbleSort {
         System.out.println(Arrays.toString(bubbleSort(arr)));
     }
 
+    // Time Complexity = Best case: O(n) <- if array is already sorted | Worst case: O(n^2) <- compares and swaps all elements.
+    //Space complexity = O(1) - constant
     public static int[] bubbleSort(int[] arr){
         int temp;
 
+        //run the loop n-1 times
         for(int i = 0; i < arr.length; i++){
-            for(int j = i + 1; j < arr.length; j++){
-                if(arr[i] > arr[j]){
+            for(int j = 1; j < arr.length - i; j++){
+                if(arr[j] < arr[j - 1]){
                     temp = arr[j];
-                    arr[j] = arr[i];
-                    arr[i] = temp;
+                    arr[j] = arr[j - 1];
+                    arr[j -1] = temp;
                 }
             }
         }
