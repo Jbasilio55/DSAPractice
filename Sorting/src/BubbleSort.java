@@ -29,16 +29,20 @@ public class BubbleSort {
         //Array is now sorted and no more pass will happen.
 
         int[] arr = {6, 3, 0, 5};
+        int[] arr2 = {6, 5, 4, 3, 2, 1};
         System.out.println(Arrays.toString(bubbleSort(arr)));
+        System.out.println(Arrays.toString(bubbleSort(arr2)));
     }
 
     // Time Complexity = Best case: O(n) <- if array is already sorted | Worst case: O(n^2) <- compares and swaps all elements.
     //Space complexity = O(1) - constant
     public static int[] bubbleSort(int[] arr){
         int temp;
+        boolean swapped;
 
         //run the loop n-1 times
         for(int i = 0; i < arr.length; i++){
+            swapped = false;
             for(int j = 1; j < arr.length - i; j++){
                 //swap if the current element is smaller than the previous element
                 if(arr[j] < arr[j - 1]){
@@ -46,7 +50,11 @@ public class BubbleSort {
                     temp = arr[j];
                     arr[j] = arr[j - 1];
                     arr[j -1] = temp;
+                    swapped = true;
                 }
+            }
+            if(!swapped){
+                break;
             }
         }
         return arr;
