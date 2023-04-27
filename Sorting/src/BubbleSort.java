@@ -32,6 +32,9 @@ public class BubbleSort {
         int[] arr2 = {6, 5, 4, 3, 2, 1};
         System.out.println(Arrays.toString(bubbleSort(arr)));
         System.out.println(Arrays.toString(bubbleSort(arr2)));
+
+        System.out.println(Arrays.toString(bubbleSort2(arr)));
+        System.out.println(Arrays.toString(bubbleSort2(arr2)));
     }
 
     // Time Complexity = Best case: O(n) <- if array is already sorted | Worst case: O(n^2) <- compares and swaps all elements.
@@ -54,6 +57,25 @@ public class BubbleSort {
                 }
             }
             if(!swapped) break;
+        }
+        return arr;
+    }
+
+    public static int[] bubbleSort2(int[] arr){
+        boolean swapped = true;
+
+        while(swapped){
+            int temp;
+            swapped = false;
+
+            for(int i = 0; i < arr.length - i; i++){
+                if(arr[i] > arr[i + 1]){
+                    temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                    swapped = true;
+                }
+            }
         }
         return arr;
     }

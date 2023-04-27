@@ -26,7 +26,8 @@ public class SelectionSort {
     }
 
     public static void selectionSort(int[] arr){
-        for(int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
+            // find the max item in the remaining array and swap with correct index
             int last = arr.length - i - 1;
             int maxIndex = getMaxIndex(arr, 0, last);
             swap(arr, maxIndex, last);
@@ -36,7 +37,7 @@ public class SelectionSort {
     public static int getMaxIndex(int[] arr, int start, int end){
         int max = start;
 
-        for(int i = 0; i < end; i++){
+        for(int i = start; i <= end; i++){
             if(arr[max] < arr[i]){
                 max = i;
             }
@@ -45,9 +46,23 @@ public class SelectionSort {
     }
 
     public static void swap(int[] arr, int first, int second){
-         int temp = arr[first];
-         arr[first] = arr[second];
-         arr[second] = temp;
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+
+    public static void selectionSort2(int[] arr){
+        for(int i = 0; i < arr.length - 1; i++){
+            int min = 0;
+            for(int j = i + 1; j < arr.length; j++){
+                if(arr[min] > arr[j]){
+                    min = j;
+                }
+            }
+            int temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
+        }
     }
 }
 
