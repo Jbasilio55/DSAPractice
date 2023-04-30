@@ -16,7 +16,8 @@ public class Main {
         System.out.println();
         pattern30(5);
         System.out.println();
-        pattern31(5);
+        pattern31(4);
+        System.out.println();
     }
 
     public static void pattern1(int n){
@@ -130,11 +131,14 @@ public class Main {
     }
 
     public static void pattern31(int n){
-        for(int row = 0; row <= n - 1; row++){
-            for(int col = n - row -1; col < 0;col++){
-                System.out.print(col);
+        int originalN = n;
+        n = 2 * n;
+        for(int row = 0; row <= n; row++){
+            for(int col = 0; col <= n; col++){
+                int atEveryIndex = originalN - Math.min(Math.min(row, col), Math.min(n - row, n - col));
+                System.out.print(atEveryIndex+" ");
             }
             System.out.println();
-        }
+       }
     }
 }
