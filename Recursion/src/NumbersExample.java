@@ -6,12 +6,12 @@ public class NumbersExample {
         number(5);
 
 //            stack
-
-//        |(number[1])| n - 1 = 1
-//        |(number[2])| n - 1 = 2
-//        |(number[3])| n - 1 = 3
-//        |(number[4])| n - 1 = 4
-//        |(number[5])|  n = 5
+//
+//        |(number[1])|   ^  print(1)    |    n - 1 = 1   print(1)
+//        |(number[2])|   |  print(2)    |    n - 1 = 2   print(2)
+//        |(number[3])|   |  print(3)    |    n - 1 = 3   print(3)
+//        |(number[4])|   |  print(4)    |    n - 1 = 4   print(4)
+//        |(number[5])|   |  print(5)    v        n = 5   print(5)
 //        |  (main)   |
 //        |___________|
     }
