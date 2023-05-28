@@ -33,20 +33,26 @@ public class TargetSum {
     }
     //
     public static int[] TPTargetSum(int[] arr, int target){
+        //set left and right pointers
         int left = 0, right = arr.length - 1;
+        //keep track of current sum
         int currentSum = 0;
 
+        //while right pointer is greater than left pointer
         while(left < right){
+            //add the pointer to current sum (reassign)
             currentSum = arr[left] + arr[right];
 
+            //if both pointers sum equals target return indexes
             if(currentSum == target){
                 return new int[] {left, right};
-            }else if(currentSum < target){
+            }else if(currentSum < target){ // if sum is less than target increment left pointer
                 left++;
-            }else{
+            }else{ // if sum is greater than target than decrement right pointer
                 right--;
             }
         }
+        //return [-1, -1] if not found
         return new int[]{-1, -1};
     }
 }
