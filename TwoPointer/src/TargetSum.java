@@ -9,6 +9,9 @@ public class TargetSum {
         System.out.println(Arrays.toString(BFTargetSum(input, target)));
         System.out.println(Arrays.toString(BFTargetSum(input2, target2)));
 
+        System.out.println(Arrays.toString(BSTargetSum(input, target)));
+        System.out.println(Arrays.toString(BSTargetSum(input2, target2)));
+
         System.out.println(Arrays.toString(TPTargetSum(input, target)));
         System.out.println(Arrays.toString(TPTargetSum(input2, target2)));
     }
@@ -31,7 +34,34 @@ public class TargetSum {
         }
         return new int[]{-1, -1};
     }
-    //
+    
+    //Binary Search method - Complexity: Time O(n * log(n)) | Space O(1)
+    public static int[] BSTargetSum(int[] arr, int target){
+        //iterate through the given array
+        for(int i = 0; i < arr.length; i++){
+            //set start, end and current sum
+            int start = i, end = arr.length - 1;
+            int mid = start + (end - start) / 2;
+            int currentSum = 0;
+
+            //binary search
+            while(start < end){
+                currentSum = arr[start] + arr[end];
+
+                if(currentSum == target){
+                    return new int[]{start, end};
+                } else if (currentSum < target) {
+                    start = mid++;
+                }else{
+                    end--;
+                }
+            }
+        }
+        return new int[]{-1, -1};
+    }
+    
+    
+    // Two pointer method Complexity: Time O(n) | Space O(1)
     public static int[] TPTargetSum(int[] arr, int target){
         //set left and right pointers
         int left = 0, right = arr.length - 1;
