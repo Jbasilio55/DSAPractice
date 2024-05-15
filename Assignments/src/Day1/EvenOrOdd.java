@@ -14,5 +14,6 @@ public class EvenOrOdd {
         }else{
             System.out.println("Odd");
         }
+        scanner.close();
     }
 }

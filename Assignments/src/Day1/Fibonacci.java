@@ -41,5 +41,6 @@ public class Fibonacci {
         }
         //show total
         System.out.println(total);
+        scanner.close();
     }
 }

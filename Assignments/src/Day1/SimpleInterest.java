@@ -18,5 +18,6 @@ public class SimpleInterest {
         //output interest
         double interest = principle * years * rate;
         System.out.println("The interest $"+interest);
+        scanner.close();
     }
 }
