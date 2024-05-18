@@ -20,7 +20,7 @@ public class RemoveDuplicatesFromSA {
 
         //iterate through array
         for(int i = 1; i < nums.length; i++){
-            if(nums[i] != nums[i - 1]){ // if element at 1 does not equal previous
+            if(nums[i] != nums[i - 1]){ // if element at i does not equal previous
                 nums[index] = nums[i]; // assign iterated element with element at "index"
                 index++; //increment index
             }
