@@ -1,4 +1,4 @@
-package Practice;
+package Practice.Arrays;
 
 // leetcode 26. Remove Duplicates from Sorted Array
 
@@ -6,9 +6,6 @@ public class RemoveDuplicatesFromSA {
     public static void main(String[] args) {
         int test1[] = {1,1,2};
         int test2[] = {0,0,1,1,1,2,2,3,3,4};
-
-        removeDuplicates(test1);
-        removeDuplicates(test2);
 
         System.out.println(removeDuplicates(test1));
         System.out.println(removeDuplicates(test2));
