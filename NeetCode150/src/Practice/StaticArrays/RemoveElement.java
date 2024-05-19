@@ -1,4 +1,4 @@
-package Practice.Arrays;
+package Practice.StaticArrays;
 
 // Leetcode 27. Remove Element
 
@@ -15,15 +15,20 @@ public class RemoveElement {
     }
 
     public static int removeElement(int[] nums, int val) {
-
+        // start at first index
         int index = 0;
 
+        //iterate through array
         for(int i = 0; i < nums.length; i++){
+            //if iterated element does not equal val
             if(nums[i] != val){
+                //change element at index with iterated element
                 nums[index] = nums[i];
+                //increment index
                 index++;
             }
         }
+        //return index (number of non-val)
         return index;
     }
 }

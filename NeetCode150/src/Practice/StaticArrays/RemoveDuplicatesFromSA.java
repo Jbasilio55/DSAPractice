@@ -1,4 +1,4 @@
-package Practice.Arrays;
+package Practice.StaticArrays;
 
 // leetcode 26. Remove Duplicates from Sorted Array
 
