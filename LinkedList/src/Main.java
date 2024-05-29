@@ -34,5 +34,15 @@ public class Main {
 
         dList.insertAfterValue(6, 10);
         dList.display();
+
+        CLL cList = new CLL();
+        cList.insert(1);
+        cList.insert(2);
+        cList.insert(3);
+        cList.insert(4);
+        cList.insert(5);
+        cList.display();
+        cList.delete(3);
+        cList.display();
     }
 }
