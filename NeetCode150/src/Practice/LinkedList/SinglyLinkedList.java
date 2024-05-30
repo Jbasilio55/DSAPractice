@@ -2,8 +2,6 @@ package Practice.LinkedList;
 
 //707 Design Linked List
 
-import java.util.ArrayList;
-
 public class SinglyLinkedList {
     Node head;
     Node tail;
@@ -64,12 +62,12 @@ public class SinglyLinkedList {
         if(curr != null){
             curr.next = curr.next.next;
         }
-
+        return true;
     }
 
-    public ArrayList<Integer> getValues() {
-
-    }
+//    public ArrayList<Integer> getValues() {
+//
+//    }
 
 }
 
