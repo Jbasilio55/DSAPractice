@@ -19,6 +19,11 @@ public class Main {
         System.out.println(list.delete(2));
         list.displayLL();
 
+        list.insertRec(21, 2);
+        list.displayLL();
+
+        System.out.println();
+
         DLL dList = new DLL();
         dList.insertFirst(2);
         dList.insertFirst(4);
@@ -34,6 +39,8 @@ public class Main {
 
         dList.insertAfterValue(6, 10);
         dList.display();
+
+        System.out.println();
 
         CLL cList = new CLL();
         cList.insert(1);
