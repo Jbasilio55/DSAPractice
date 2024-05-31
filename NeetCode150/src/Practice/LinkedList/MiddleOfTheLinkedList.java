@@ -23,4 +23,21 @@ public class MiddleOfTheLinkedList {
         // when fast pointer reaches the end, slow pointer will be at the middle
         return slow;
     }
+    //brute force approach
+    public ListNode middleNode2(ListNode head) {
+        ListNode node = head; //make a new node starting at head
+        int count = 0; // count = 0
+
+        while(node != null){ // iterate through linked list until null
+            count++; // count + 1
+            node = node.next; // move to next node
+        }
+
+        int middleIndex = count / 2; // count / 2
+
+        for(int i = 0; i < middleIndex; i++){ // iterate through list again but half the distance
+            head = head.next; // move to next
+        }
+        return head; //return head;
+    }
 }
