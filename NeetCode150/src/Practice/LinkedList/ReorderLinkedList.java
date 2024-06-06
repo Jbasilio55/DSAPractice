@@ -14,39 +14,46 @@ public class ReorderLinkedList {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 
-    public static void reorderList(ListNode head) {
-        // Edge cases
-        if (head == null || head.next == null) {
-            return;
+    public void reorderList(ListNode head) {
+        if (head == null || head.next == null) return;
+
+        // 1. Find the middle of the list
+        ListNode slowPtr = head;
+        ListNode fastPtr = head;
+
+        while (fastPtr != null && fastPtr.next != null) {
+            slowPtr = slowPtr.next;
+            fastPtr = fastPtr.next.next;
         }
 
-        // Find the middle of the linked list using the fast and slow pointer technique
-        ListNode slow = head, fast = head;
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-        }
-
-        // Reverse the second half of the linked list
-        ListNode prev = null, curr = slow, nextNode = null;
+        // 2. Reverse the second half of the list
+        ListNode prev = null;
+        ListNode curr = slowPtr;
+        ListNode next = null;
 
         while (curr != null) {
-            nextNode = curr.next;
+            next = curr.next;
             curr.next = prev;
             prev = curr;
-            curr = nextNode;
+            curr = next;
         }
 
-        // Merge the two halves
-        ListNode first = head, second = prev;
+        // Now, prev is the head of the reversed second half
+        ListNode secondHalf = prev;
 
-        while (second.next != null) {
-            ListNode tmp1 = first.next;
-            ListNode tmp2 = second.next;
-            first.next = second;
-            second.next = tmp1;
-            first = tmp1;
-            second = tmp2;
+        // 3. Merge the two halves
+        ListNode firstHalf = head;
+        ListNode temp1, temp2;
+
+        while (secondHalf.next != null) {
+            temp1 = firstHalf.next;
+            temp2 = secondHalf.next;
+
+            firstHalf.next = secondHalf;
+            secondHalf.next = temp1;
+
+            firstHalf = temp1;
+            secondHalf = temp2;
         }
     }
 
