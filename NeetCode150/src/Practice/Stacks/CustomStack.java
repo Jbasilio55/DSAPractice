@@ -37,7 +37,7 @@ public class CustomStack {
         return data[ptr--];
     }
 
-    private boolean isfull() {
+    public boolean isfull() {
         return ptr == data.length - 1;
     }
 
