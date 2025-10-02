@@ -40,8 +40,8 @@ public class RotatedSortedArray {
 //        System.out.println(findPivot(nums3));
 
         System.out.println(searchRotatedArray(nums, 0));
-        System.out.println(searchRotatedArray(nums, 3));
-        System.out.println(searchRotatedArray(nums2, 2));
+        System.out.println(searchRotatedArray(nums2, 3));
+        System.out.println(searchRotatedArray(nums3, 2));
 
     }
 

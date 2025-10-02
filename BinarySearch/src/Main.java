@@ -1,11 +1,13 @@
 public class Main {
     public static void main(String[] args) {
         int[] numbs = {-100, -3, 1, 2, 3, 5, 6, 23, 45, 66, 79, 1098};
+        int[] nums = {2, 8, 89, 120, 1000};
 
         System.out.println(search(numbs, 3));
         System.out.println(search(numbs, 0));
         System.out.println(search(numbs, 45));
         System.out.println(search(numbs, 5));
+        System.out.println(search(numbs, 120));
     }
     //return the index
     // return -1 if target does not exist in array

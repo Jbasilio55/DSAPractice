@@ -7,10 +7,12 @@ public class Main {
         // Arrays are used to store multiple values in a single variable, instead of declaring separate variables
         // for each value.
         //
-        //To declare an array, define the variable type with square brackets:
+        // To declare an array, define the variable type with square brackets:
         //
-        //syntax
-        //datatype[] variableName = new datatype[size]
+        // ----- syntax ------
+        // datatype[] variableName; <---declaration of array. (variableName) is getting defined in the stack
+        //
+        // datatype[] variableName = new datatype[size] <--- declaration and initialization. the object is being created in the memory (heap)
 
         //store 5 names:
         String[] names = new String[5];
@@ -38,7 +40,7 @@ public class Main {
         //       |        |                 |
         //       |        |                 |
         //       v        v                 v
-        //(datatype) (ref variable) (creating obj in heap memory)
+        // (datatype) (ref variable) (creating obj in heap memory)
         //
         //  int[]  needALongerName  ---> occurs during compilation
         //  new int[3]              ---> occurs during runtime - (Dynamic memory allocation)
